@@ -1,0 +1,44 @@
+@import "variables";
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  color: $primary-color;
+  background-color: #cecece;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+button:focus,
+a:focus {
+  outline: none;
+}
+
+button,
+input,
+textarea {
+  appearance: none;
+  border-radius: $border-radius-default;
+}
