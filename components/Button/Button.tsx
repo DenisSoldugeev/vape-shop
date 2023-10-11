@@ -1,16 +1,7 @@
-import { FC, ReactNode } from 'react';
+import { FC } from 'react';
 import classNames from 'classnames';
+import { ButtonProps, Size, Variant } from 'types/button';
 import styles from './Button.module.scss';
-
-interface ButtonProps {
-  children: ReactNode;
-  onClick?: () => void;
-  disabled?: boolean;
-  variant?: 'primary' | 'secondary';
-  size?: 'small' | 'medium' | 'large';
-  isLoading?: boolean;
-  className?: string;
-}
 
 export const Button: FC<ButtonProps> = ({
   children,
@@ -21,16 +12,39 @@ export const Button: FC<ButtonProps> = ({
   isLoading = false,
   className,
 }) => {
+  const getVariantClass = (variant: Variant) => {
+    switch (variant) {
+      case 'primary':
+        return styles.buttonPrimary;
+      case 'secondary':
+        return styles.buttonSecondary;
+      case 'outlinePrimary':
+        return styles.buttonOutlinePrimary;
+      case 'outlineSecondary':
+        return styles.buttonOutlineSecondary;
+      default:
+        return '';
+    }
+  };
+
+  const getSizeClass = (size: Size) => {
+    switch (size) {
+      case 'small':
+        return styles.buttonSmall;
+      case 'medium':
+        return styles.buttonMedium;
+      case 'large':
+        return styles.buttonLarge;
+      default:
+        return '';
+    }
+  };
+
   const buttonClass = classNames(
-    styles.btn,
-    {
-      [styles.btnPrimary]: variant === 'primary',
-      [styles.btnSecondary]: variant === 'secondary',
-      [styles.btnSmall]: size === 'small',
-      [styles.btnMedium]: size === 'medium',
-      [styles.btnLarge]: size === 'large',
-      [styles.btnDisabled]: disabled,
-    },
+    styles.button,
+    getVariantClass(variant),
+    getSizeClass(size),
+    { [styles.buttonDisabled]: disabled },
     className
   );
 

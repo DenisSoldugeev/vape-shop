@@ -1,15 +1,20 @@
 import { FC } from 'react';
 import Link from 'next/link';
-import styles from './Header.module.scss';
 import Button from 'components/Button';
-
+import styles from './Header.module.scss';
 export const Header: FC = () => {
   return (
     <header className={styles.header}>
       <div className='container'>
         <div className={styles.wrapper}>
           <div className={styles.btnWrapper}>
-            <Button>Каталог</Button>
+            <Button
+              variant='primary'
+              size='medium'
+              className={styles.btnCatalog}
+            >
+              Каталог
+            </Button>
           </div>
           <div className={styles.logo}>
             <Link href='/'>Vape Store</Link>

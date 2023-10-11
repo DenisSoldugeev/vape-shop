@@ -1,44 +1,44 @@
 @import "styles/variables";
+@import "styles/mixins";
 
-.btn {
-  border: none;
-  cursor: pointer;
+.button {
   font-family: $base-font-family;
-  font-size: $base-font-size;
-  line-height: $base-line-height;
-  padding: $small-spacing $base-spacing;
-  border-radius: $border-radius-default;
-  transition: background-color 0.3s, color 0.3s;
+  border-radius: $border-radius-small;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+
+  &Primary {
+    @include button-variant($purple-700, $purple-700, $white);
+  }
+
+  &Secondary {
+    @include button-variant($gray-300, $gray-400, $black);
+  }
+
+  &OutlinePrimary {
+    @include button-variant-outline($purple-700, $purple-700);
+  }
+
+  &OutlineSecondary {
+    @include button-variant-outline($gray-300, $gray-400);
+  }
+
+  &Small {
+    @include button-size($button-padding-small, calc(#{$base-font-size} - 2px));
+  }
+
+  &Medium {
+    @include button-size($button-padding-medium, $base-font-size);
+  }
+
+  &Large {
+    @include button-size($button-padding-large, calc(#{$base-font-size} + 2px));
+  }
 }
 
-
-.btnPrimary {
-  background-color: $purple-700;
-  color: $white;
-}
-
-.btnSecondary {
-  background-color: $gray-100;
-  color: $black;
-}
-
-.btnSmall {
-  padding: $small-spacing;
-  font-size: calculate-font-size($base-font-size, -2);  // Уменьшить размер шрифта на 2px
-}
-
-.btnMedium {
-  padding: $small-spacing $base-spacing;
-}
-
-.btnLarge {
-  padding: $base-spacing;
-  font-size: calculate-font-size($base-font-size, 2);  // Увеличить размер шрифта на 2px
-}
-
-.btnDisabled {
+.buttonDisabled {
   cursor: not-allowed;
-  opacity: 0.65;
+  opacity: 0.6;
 }
 
 .loadingSpinner {
@@ -54,8 +54,12 @@
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @function calculate-font-size($base-size, $adjustment) {
