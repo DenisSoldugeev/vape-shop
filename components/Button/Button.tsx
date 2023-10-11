@@ -1,50 +1,25 @@
 import { FC } from 'react';
 import classNames from 'classnames';
-import { ButtonProps, Size, Variant } from 'types/button';
 import styles from './Button.module.scss';
+import { ButtonProps } from 'types/button';
 
-export const Button: FC<ButtonProps> = ({
-  children,
-  onClick,
-  disabled = false,
-  variant = 'primary',
-  size = 'medium',
-  isLoading = false,
-  className,
-}) => {
-  const getVariantClass = (variant: Variant) => {
-    switch (variant) {
-      case 'primary':
-        return styles.buttonPrimary;
-      case 'secondary':
-        return styles.buttonSecondary;
-      case 'outlinePrimary':
-        return styles.buttonOutlinePrimary;
-      case 'outlineSecondary':
-        return styles.buttonOutlineSecondary;
-      default:
-        return '';
-    }
-  };
-
-  const getSizeClass = (size: Size) => {
-    switch (size) {
-      case 'small':
-        return styles.buttonSmall;
-      case 'medium':
-        return styles.buttonMedium;
-      case 'large':
-        return styles.buttonLarge;
-      default:
-        return '';
-    }
-  };
+export const Button: FC<ButtonProps> = (props) => {
+  const {
+    children,
+    onClick,
+    disabled = false,
+    color = 'primary',
+    outline = false,
+    size = 'medium',
+    isLoading = false,
+    className,
+  } = props;
 
   const buttonClass = classNames(
     styles.button,
-    getVariantClass(variant),
-    getSizeClass(size),
-    { [styles.buttonDisabled]: disabled },
+    outline ? styles[`button-outline-${color}`] : styles[`button-${color}`],
+    styles[`button-${size}`],
+    disabled && styles.disabled,
     className
   );
 

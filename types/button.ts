@@ -1,16 +1,21 @@
 import { ReactNode } from 'react';
 
-export type Variant =
+export type Color =
   | 'primary'
   | 'secondary'
-  | 'outlinePrimary'
-  | 'outlineSecondary';
+  | 'success'
+  | 'info'
+  | 'warning'
+  | 'danger';
+
 export type Size = 'small' | 'medium' | 'large';
+
 export interface ButtonProps {
   children: ReactNode;
   onClick?: () => void;
   disabled?: boolean;
-  variant?: Variant;
+  color?: Color;
+  outline?: boolean;
   size?: Size;
   isLoading?: boolean;
   className?: string;

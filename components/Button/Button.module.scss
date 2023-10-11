@@ -7,36 +7,39 @@
   cursor: pointer;
   transition: background-color 0.3s, border-color 0.3s;
 
-  &Primary {
+  &-primary {
     @include button-variant($purple-700, $purple-700, $white);
   }
 
-  &Secondary {
+  &-secondary {
     @include button-variant($gray-300, $gray-400, $black);
   }
 
-  &OutlinePrimary {
-    @include button-variant-outline($purple-700, $purple-700);
+  &-outline {
+    &-primary {
+      @include button-variant-outline($purple-700, $purple-700);
+    }
+
+    &-secondary {
+      @include button-variant-outline($gray-300, $gray-400);
+    }
   }
 
-  &OutlineSecondary {
-    @include button-variant-outline($gray-300, $gray-400);
-  }
 
-  &Small {
+  &-small {
     @include button-size($button-padding-small, calc(#{$base-font-size} - 2px));
   }
 
-  &Medium {
+  &-medium {
     @include button-size($button-padding-medium, $base-font-size);
   }
 
-  &Large {
+  &-large {
     @include button-size($button-padding-large, calc(#{$base-font-size} + 2px));
   }
 }
 
-.buttonDisabled {
+.disabled {
   cursor: not-allowed;
   opacity: 0.6;
 }

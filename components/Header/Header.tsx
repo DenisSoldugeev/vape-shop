@@ -9,8 +9,9 @@ export const Header: FC = () => {
         <div className={styles.wrapper}>
           <div className={styles.btnWrapper}>
             <Button
-              variant='primary'
+              color='primary'
               size='medium'
+              outline
               className={styles.btnCatalog}
             >
               Каталог
