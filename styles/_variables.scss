@@ -1,0 +1,51 @@
+// Шрифты
+$font-roboto: var(--font-roboto);
+$font-signika: var(--font-signika);
+$base-font-family: $font-roboto;
+$base-font-size: 16px;
+$base-line-height: 1.5;
+
+// Цвета
+$black: #000000;
+$white: #ffffff;
+$black-800: #221E25;
+$gray-50: #EFF0F3;
+$gray-75: #F5F5F5;
+$gray-100: #D9D9D9;
+$gray-300: #AEAEAE;
+$gray-400: #A2A2A2;
+$gray-550: #949494;
+$gray-600: #8C8C8C;
+$gray-650: #848484;
+$gray-800: #606060;
+$gray-900: #4A4A4A;
+$gray-950: #393939;
+$purple-400: #8C7FC4;
+$purple-500: #AC7BFF;
+$purple-600: #B72DE6;
+$purple-650: #7F40B2;
+$purple-700: #7C34AF;
+$purple-dark: #5f2787;
+$dark-blue-900: #474756;
+$red: #F53131;
+$dark-red: #CA2B2B;
+$green: #26DD2D;
+$yellow: #c7c224;
+$alert: #E95A5A;
+$orange: #FD9535;
+
+// Отступы
+$base-spacing: 16px;
+$small-spacing: 8px;
+$large-spacing: 24px;
+
+$button-padding-small: 8px 16px;
+$button-padding-medium: 12px 24px;
+$button-padding-large: 16px 32px;
+
+// Размеры границ
+$border-radius-small: 4px;
+$border-radius-default: 8px;
+$border-radius-large: 12px;
+
+$bg-header-footer: $black-800;

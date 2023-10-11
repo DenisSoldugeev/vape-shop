@@ -1,0 +1,28 @@
+@import "variables";
+
+@mixin button-variant($background, $border-color, $color) {
+  background-color: $background;
+  border: 1px solid $border-color;
+  color: $color;
+
+  &:hover {
+    background-color: darken($background, 10%);
+    border-color: darken($border-color, 10%);
+  }
+}
+
+@mixin button-variant-outline($border-color, $color) {
+  background-color: transparent;
+  border: 1px solid $border-color;
+  color: $color;
+
+  &:hover {
+    border-color: darken($border-color, 10%);
+    color: darken($color, 10%);
+  }
+}
+
+@mixin button-size($padding, $font-size) {
+  padding: $padding;
+  font-size: $font-size;
+}

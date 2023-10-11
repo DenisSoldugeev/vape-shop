@@ -1,0 +1,70 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.button {
+  font-family: $base-font-family;
+  border-radius: $border-radius-small;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+
+  &-primary {
+    @include button-variant($purple-700, $purple-700, $white);
+  }
+
+  &-secondary {
+    @include button-variant($gray-300, $gray-400, $black);
+  }
+
+  &-outline {
+    &-primary {
+      @include button-variant-outline($purple-700, $purple-700);
+    }
+
+    &-secondary {
+      @include button-variant-outline($gray-300, $gray-400);
+    }
+  }
+
+
+  &-small {
+    @include button-size($button-padding-small, calc(#{$base-font-size} - 2px));
+  }
+
+  &-medium {
+    @include button-size($button-padding-medium, $base-font-size);
+  }
+
+  &-large {
+    @include button-size($button-padding-large, calc(#{$base-font-size} + 2px));
+  }
+}
+
+.disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.loadingSpinner {
+  margin-right: $small-spacing;
+  border-right: 2px solid $gray-100;
+  border-left: 2px solid $gray-100;
+  border-bottom: 2px solid $gray-100;
+  border-top: 2px solid $purple-500;
+  border-radius: 50%;
+  width: 1rem;
+  height: 1rem;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@function calculate-font-size($base-size, $adjustment) {
+  @return $base-size + $adjustment * 1px;
+}

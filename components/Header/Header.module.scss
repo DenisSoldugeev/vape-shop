@@ -1,0 +1,29 @@
+@import "styles/variables";
+
+.header {
+  background-color: $bg-header-footer;
+  padding: 20px;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo a {
+  font-family: $font-signika;
+  color: #fff;
+  font-size: 36px;
+  text-decoration: none;
+}
+
+.rightSection {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+.btnCatalog {
+  font-weight: 700;
+}
