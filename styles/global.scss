@@ -12,7 +12,7 @@ body {
   font-family: $base-font-family;
   font-size: $base-font-size;
   line-height: $base-line-height;
-  color: $white;
+  color: $black;
   background-color: $white;
   display: flex;
   flex-direction: column;
@@ -29,6 +29,9 @@ footer {
 
 
 h1,h2,h3,h4,h5,h6 {
-  font-family: $font-signika;
+  font-family: $font-phenomena;
 }
 
+.red {
+  color: red;
+}

@@ -1,0 +1,31 @@
+@import "styles/variables";
+
+.input {
+  border: 1px solid $gray-300;
+  border-radius: $border-radius-small;
+  font-size: $base-font-size;
+  font-family: $base-font-family;
+  transition: border-color 0.3s;
+
+  &:focus {
+    border-color: $purple-700;
+    outline: none;
+  }
+
+  &:disabled {
+    background-color: $gray-75;
+    cursor: not-allowed;
+  }
+}
+
+.input-small {
+  padding: $button-padding-small;
+}
+
+.input-medium {
+  padding: $button-padding-medium;
+}
+
+.input-large {
+  padding: $button-padding-large;
+}

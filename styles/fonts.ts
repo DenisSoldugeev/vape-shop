@@ -1,9 +1,10 @@
-import { Signika, Roboto } from 'next/font/google';
+import { Roboto } from 'next/font/google';
+import localFont from 'next/font/local';
 
-const signika = Signika({
-  subsets: ['latin', 'latin-ext'],
-  variable: '--font-signika',
+const phenomena = localFont({
+  src: '../fonts/Phenomena.woff2',
   display: 'swap',
+  variable: '--font-phenomena',
 });
 
 const roboto = Roboto({
@@ -13,4 +14,4 @@ const roboto = Roboto({
   display: 'swap',
 });
 
-export { signika, roboto };
+export { phenomena, roboto };

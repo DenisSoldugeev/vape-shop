@@ -1,5 +1,5 @@
+import LoginPage from 'components/LoginPage';
+
 export default function Page() {
-    return (
-        <h1>Login</h1>
-    )
+  return <LoginPage />;
 }

@@ -1,8 +1,9 @@
 @import "styles/variables";
+@import "styles/mixins";
 
 .header {
   background-color: $bg-header-footer;
-  padding: 20px;
+  padding: 7.5px 0;
 }
 
 .wrapper {
@@ -12,18 +13,134 @@
 }
 
 .logo a {
-  font-family: $font-signika;
+  font-family: $font-phenomena;
   color: #fff;
   font-size: 36px;
   text-decoration: none;
 }
 
-.rightSection {
+.right {
   display: flex;
-  gap: 25px;
+  gap: 35px;
   align-items: center;
 }
 
 .btnCatalog {
   font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 168px;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.searchForm {
+  position: relative;
+  display: flex;
+}
+
+.searchInput {
+  z-index: 0;
+  padding-left: 44px;
+  background-color: #473A49;
+  border: none !important;
+  width: 100%;
+  position: relative;
+  transition: background-color 0.2s;
+
+  &:focus {
+    outline: none;
+    background-color: $white;
+  }
+
+  &::placeholder {
+    color: $gray-300;
+    opacity: 1; /* Firefox */
+  }
+}
+
+.telLink {
+  font-family: $font-phenomena;
+  font-weight: 700;
+  font-size: 32px;
+  color: $white;
+  white-space: nowrap;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.workingHours {
+  font-size: 14px;
+  color: #8C8C8C;
+}
+
+.searchButton {
+  @include reset-button();
+  color: #C6C6C6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 44px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+
+  &:hover {
+    background-color: transparent;
+  }
+}
+
+.controlButtons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.controlButton  {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  padding: 10px;
+  background-color: $dark-blue-900;
+  transition: background-color 0.2s;
+  outline: none;
+  border: none;
+  gap: 8px;
+  font-size: 16px;
+
+  & svg {
+    color: #fff;
+    transition: color 0.2s;
+  }
+
+  &:hover {
+    background-color: #ffffff;
+
+    & svg {
+      color: $dark-blue-900;
+    }
+
+    & span {
+      color: $black;
+    }
+  }
+}
+
+.cartPrice {
+  color: $white;
+  font-weight: 600;
+  transition: color 0.2s;
 }

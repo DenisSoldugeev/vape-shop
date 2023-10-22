@@ -26,3 +26,20 @@
   padding: $padding;
   font-size: $font-size;
 }
+
+@mixin reset-button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  text-align: inherit;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  &:focus {
+    outline: none;
+  }
+}

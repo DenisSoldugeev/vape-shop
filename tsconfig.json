@@ -18,12 +18,14 @@
         "name": "next"
       }
     ],
+    "baseUrl": "./",
     "paths": {
       "app/*": ["app/*"],
       "components/*": ["components/*"],
       "hooks/*": ["hooks/*"],
       "public/*": ["public/*"],
       "styles/*": ["styles/*"],
+      "fonts/*": ["fonts/*"],
       "types/*": ["types/*"],
       "utils/*": ["utils/*"],
       "locales/*": ["locales/*"],
