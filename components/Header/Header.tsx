@@ -1,3 +1,4 @@
+'use client';
 import { FC } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -7,8 +8,12 @@ import { FaListUl, FaRegUser } from 'react-icons/fa6';
 import { BsSearch, BsCart3 } from 'react-icons/bs';
 import styles from './Header.module.scss';
 import logo from 'public/logo.svg';
+import { signOut, useSession } from 'next-auth/react';
+import { useLocale } from 'use-intl';
 
 export const Header: FC = () => {
+  const session = useSession();
+  const locale = useLocale();
   return (
     <header className={styles.header}>
       <div className='container'>
@@ -19,9 +24,9 @@ export const Header: FC = () => {
               Каталог
             </Button>
             <form className={styles.searchForm}>
-              <Button className={styles.searchButton}>
+              <button className={styles.searchButton}>
                 <BsSearch />
-              </Button>
+              </button>
               <Input
                 type='text'
                 placeholder='Поиск'
@@ -44,13 +49,29 @@ export const Header: FC = () => {
               </span>
             </div>
             <div className={styles.controlButtons}>
-              <Button className={styles.controlButton}>
+              <button className={styles.controlButton}>
                 <FaRegUser size={24} />
-              </Button>
-              <Button className={styles.controlButton}>
+              </button>
+              <button className={styles.controlButton}>
                 <BsCart3 size={24} />
                 <span className={styles.cartPrice}>0 р.</span>
-              </Button>
+              </button>
+              {session?.data?.user ? (
+                <button
+                  className={styles.controlButton}
+                  onClick={() =>
+                    signOut({
+                      callbackUrl: '/',
+                    })
+                  }
+                >
+                  Выйти
+                </button>
+              ) : (
+                <Link href={`${locale}/login`} className={styles.controlButton}>
+                  Войти
+                </Link>
+              )}
             </div>
           </section>
         </div>
