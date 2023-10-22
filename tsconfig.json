@@ -24,6 +24,7 @@
       "hooks/*": ["hooks/*"],
       "public/*": ["public/*"],
       "styles/*": ["styles/*"],
+      "fonts/*": ["fonts/*"],
       "types/*": ["types/*"],
       "utils/*": ["utils/*"],
       "locales/*": ["locales/*"],

@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
 import { isValidLocale } from 'utils/locales';
-import { roboto, signika } from '@/fonts';
+import { roboto, phenomena } from '@/fonts';
 import 'styles/global.scss';
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -23,12 +23,10 @@ export default function RootLayout({
   if (!isValidLocale(locales, locale)) notFound();
 
   return (
-    <html lang={locale} className={`${roboto.variable} ${signika.variable}`}>
+    <html lang={locale} className={`${roboto.variable} ${phenomena.variable}`}>
       <body>
         <Header />
-        <main>
-          <div className='container'>{children}</div>
-        </main>
+        <main>{children}</main>
         <Footer />
       </body>
     </html>
