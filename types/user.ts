@@ -5,6 +5,11 @@ export type User = {
 };
 
 export type UserHookResult = {
-  user: User | null;
+  user: User;
   isAuthenticated: boolean;
+};
+
+export type ChangesUserData = {
+  name: string;
+  email: string;
 };

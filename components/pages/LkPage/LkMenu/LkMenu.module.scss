@@ -1,0 +1,33 @@
+@import "styles/variables";
+
+.list {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-right: 70px;
+
+  & li {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.2;
+    color: $gray-650;
+    &:hover {
+      color: $black;
+    }
+  }
+
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    content: '';
+    width: 1px;
+    height: 100%;
+    background-color: $gray-100;
+  }
+}
+
+.active {
+  color: $black !important;
+}

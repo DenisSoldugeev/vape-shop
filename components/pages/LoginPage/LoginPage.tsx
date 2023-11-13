@@ -1,6 +1,6 @@
 import styles from './LoginPage.module.scss';
-import GoogleButton from 'components/LoginPage/GoogleButton';
-import LoginForm from 'components/LoginPage/LoginForm';
+import GoogleButton from 'components/pages/LoginPage/GoogleButton';
+import LoginForm from 'components/pages/LoginPage/LoginForm';
 
 export function LoginPage() {
   return (

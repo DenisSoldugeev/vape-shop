@@ -19,4 +19,5 @@ export interface ButtonProps {
   size?: Size;
   isLoading?: boolean;
   className?: string;
+  type?: 'button' | 'submit' | 'reset';
 }

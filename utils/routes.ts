@@ -1,5 +1,6 @@
 export const ROUTES = {
   MAIN_PAGE: '/',
   LOGIN_PAGE: '/login',
-  PROFILE_PAGE: '/profile',
+  LK_PAGE: '/lk',
+  PASSWORD_PAGE: '/lk/change-password',
 };

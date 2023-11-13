@@ -1,0 +1,21 @@
+@import "styles/variables";
+
+.lkLayout {
+  margin: 50px 0;
+  overflow: hidden;
+}
+
+.mainTitle {
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 0.8;
+}
+
+.infoWrapper {
+  margin-top: 70px;
+  display: flex;
+}
+
+.contentTab {
+  margin-left: 40px;
+}

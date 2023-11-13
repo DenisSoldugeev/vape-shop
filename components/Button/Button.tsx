@@ -13,6 +13,7 @@ export const Button: FC<ButtonProps> = (props) => {
     size = 'medium',
     isLoading = false,
     className,
+    type = 'button',
   } = props;
 
   const buttonClass = classNames(
@@ -28,6 +29,7 @@ export const Button: FC<ButtonProps> = (props) => {
       className={buttonClass}
       onClick={onClick}
       disabled={disabled || isLoading}
+      type={type}
     >
       {isLoading ? (
         <>
