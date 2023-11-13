@@ -1,5 +1,5 @@
 'use client';
-import { FC } from 'react';
+import { FC, useContext } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Button from 'components/Button';
@@ -8,12 +8,13 @@ import { FaListUl, FaRegUser } from 'react-icons/fa6';
 import { BsSearch, BsCart3 } from 'react-icons/bs';
 import styles from './Header.module.scss';
 import logo from 'public/logo.svg';
-import { signOut, useSession } from 'next-auth/react';
-import { useLocale } from 'use-intl';
+import useUser from 'hooks/useUser';
+import SideModal from 'components/SideModal';
+import { UserMenuContext } from 'context/UserMenuContext';
 
 export const Header: FC = () => {
-  const session = useSession();
-  const locale = useLocale();
+  const { user, isAuthenticated } = useUser();
+  const { toggleModal } = useContext(UserMenuContext);
   return (
     <header className={styles.header}>
       <div className='container'>
@@ -49,33 +50,18 @@ export const Header: FC = () => {
               </span>
             </div>
             <div className={styles.controlButtons}>
-              <button className={styles.controlButton}>
+              <button className={styles.controlButton} onClick={toggleModal}>
                 <FaRegUser size={24} />
               </button>
               <button className={styles.controlButton}>
                 <BsCart3 size={24} />
                 <span className={styles.cartPrice}>0 р.</span>
               </button>
-              {session?.data?.user ? (
-                <button
-                  className={styles.controlButton}
-                  onClick={() =>
-                    signOut({
-                      callbackUrl: '/',
-                    })
-                  }
-                >
-                  Выйти
-                </button>
-              ) : (
-                <Link href={`${locale}/login`} className={styles.controlButton}>
-                  Войти
-                </Link>
-              )}
             </div>
           </section>
         </div>
       </div>
+      <SideModal isAuthenticated={isAuthenticated} user={user} />
     </header>
   );
 };

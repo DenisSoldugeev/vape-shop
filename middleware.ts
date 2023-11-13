@@ -1,6 +1,7 @@
 import withAuth from 'next-auth/middleware';
 import createMiddleware from 'next-intl/middleware';
 import { NextRequest } from 'next/server';
+import { ROUTES } from 'utils/routes';
 
 const locales = ['ru', 'en', 'hy'];
 const publicPages = ['/login'];
@@ -15,7 +16,7 @@ const authMiddleware = withAuth((req) => intlMiddleware(req), {
     authorized: ({ token }) => token != null,
   },
   pages: {
-    signIn: '/login',
+    signIn: ROUTES.LOGIN_PAGE,
   },
 });
 

@@ -29,6 +29,7 @@
       "types/*": ["types/*"],
       "utils/*": ["utils/*"],
       "locales/*": ["locales/*"],
+      "context/*": ["context/*"],
       "@/fonts": ["styles/fonts"]
     }
   },
