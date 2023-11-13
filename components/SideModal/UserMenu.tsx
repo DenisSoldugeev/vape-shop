@@ -14,7 +14,7 @@ export const UserMenu: FC<Props> = ({ user }) => {
       <span className={styles.userName}>{user.name}</span>
       <hr className={styles.line} />
       <ul className={styles.userMenuList}>
-        <Link href={ROUTES.PROFILE_PAGE}>Личная информация</Link>
+        <Link href={ROUTES.LK_PAGE}>Личная информация</Link>
         <li>Мои Заказы</li>
         <li>Избранное</li>
         <li>Выход</li>

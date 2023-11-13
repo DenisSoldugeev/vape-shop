@@ -21,6 +21,7 @@ export const LkMenu: FC = () => {
             <Link href={item.href}>{item.label}</Link>
           </li>
         ))}
+        <li>Выйти</li>
       </ul>
     </nav>
   );

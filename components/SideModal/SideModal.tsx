@@ -6,7 +6,7 @@ import { UserMenuContext } from 'context/UserMenuContext';
 
 type Props = {
   isAuthenticated: boolean;
-  user: User | null;
+  user: User;
 };
 
 export const SideModal: FC<Props> = ({ user, isAuthenticated }) => {

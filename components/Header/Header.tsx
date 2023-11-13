@@ -1,5 +1,5 @@
 'use client';
-import { FC, useContext } from 'react';
+import { FC } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Button from 'components/Button';
@@ -10,11 +10,11 @@ import styles from './Header.module.scss';
 import logo from 'public/logo.svg';
 import useUser from 'hooks/useUser';
 import SideModal from 'components/SideModal';
-import { UserMenuContext } from 'context/UserMenuContext';
+import { ROUTES } from 'utils/routes';
 
 export const Header: FC = () => {
   const { user, isAuthenticated } = useUser();
-  const { toggleModal } = useContext(UserMenuContext);
+
   return (
     <header className={styles.header}>
       <div className='container'>
@@ -36,7 +36,7 @@ export const Header: FC = () => {
             </form>
           </section>
           <section className={styles.logo}>
-            <Link href='/' aria-label='Link to go home page'>
+            <Link href={ROUTES.MAIN_PAGE} aria-label='Link to go home page'>
               <Image src={logo} alt='Logo' />
             </Link>
           </section>
@@ -50,9 +50,9 @@ export const Header: FC = () => {
               </span>
             </div>
             <div className={styles.controlButtons}>
-              <button className={styles.controlButton} onClick={toggleModal}>
+              <Link className={styles.controlButton} href={ROUTES.LK_PAGE}>
                 <FaRegUser size={24} />
-              </button>
+              </Link>
               <button className={styles.controlButton}>
                 <BsCart3 size={24} />
                 <span className={styles.cartPrice}>0 р.</span>
