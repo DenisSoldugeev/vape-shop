@@ -1,4 +1,4 @@
-import { Roboto } from 'next/font/google';
+import { Open_Sans } from 'next/font/google';
 import localFont from 'next/font/local';
 
 const phenomena = localFont({
@@ -7,11 +7,11 @@ const phenomena = localFont({
   variable: '--font-phenomena',
 });
 
-const roboto = Roboto({
+const openSans = Open_Sans({
   weight: ['300', '400', '500', '700'],
   subsets: ['latin', 'cyrillic', 'vietnamese'],
-  variable: '--font-roboto',
+  variable: '--font-open-sans',
   display: 'swap',
 });
 
-export { phenomena, roboto };
+export { phenomena, openSans };
