@@ -10,3 +10,13 @@ export const fetchCategories = async (): Promise<Category[]> => {
     return [];
   }
 };
+
+export const fetchCategoryBySlug = async (slug: string) => {
+  try {
+    const response = await api.get(`/categories/${slug}`);
+    return response.data;
+  } catch (error) {
+    console.error('Ошибка при получении категории:', error);
+    throw error;
+  }
+};

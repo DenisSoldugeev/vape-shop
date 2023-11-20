@@ -1,7 +1,9 @@
-import { FC } from 'react';
+import CategoryPage from 'components/pages/CategoryPage';
+import { fetchCategoryBySlug } from 'utils/categoryService';
 
-const Page: FC = () => {
-  return <div>Category</div>;
+const Page = async ({ params }: { params: { slug: string } }) => {
+  const categoryData = await fetchCategoryBySlug(params.slug);
+  return <CategoryPage category={categoryData} />;
 };
 
 export default Page;

@@ -1,0 +1,22 @@
+@import "styles/variables";
+
+.breadcrumbs {
+  font-size: 16px;
+  line-height: 1.35;
+  font-weight: 400;
+  color: $gray-650;
+}
+
+.list {
+  display: flex;
+}
+
+.breadcrumbItem {
+  font-size: 16px;
+  line-height: 1.35;
+  font-weight: 400;
+}
+
+.separator {
+  margin: 0 8px;
+}
