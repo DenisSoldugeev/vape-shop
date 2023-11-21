@@ -19,6 +19,9 @@ const ProductCard: FC<Props> = ({ product }) => {
           <span className={styles.price}>{product.price} &#8381;</span>
         </div>
       </div>
+      <div className={styles.cardHiddenElement}>
+        <button className={styles.cardButton}>Подробнее</button>
+      </div>
     </div>
   );
 };

@@ -12,10 +12,19 @@
 .productCard {
   flex: 0 1 25%;
   width: 100%;
-  border: 1px solid #ccc;
   padding: 10px;
+  &:hover {
+    box-shadow: 0 9px 19px rgba(0, 0, 0, 0.09);
+    & .cardHiddenElement {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
 }
-
+.cardHiddenElement {
+  opacity: 0;
+  visibility: hidden;
+}
 .productTop {
   display: flex;
   justify-content: center;
@@ -36,6 +45,9 @@
   font-size: 16px;
   font-weight: 400;
   color: $black;
+  &:hover {
+    color: $purple-650;
+  }
 }
 
 .priceWrapper {
