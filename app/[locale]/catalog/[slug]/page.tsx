@@ -1,10 +1,21 @@
 import CategoryPage from 'components/pages/CategoryPage';
-import { fetchCategoryBySlug } from 'utils/categoryService';
-import { getProductsByCategory } from 'utils/productService';
+import CategoriesService from 'utils/api/services/CategoryService';
+import ProductsService from 'utils/api/services/ProductService';
+import CategoryService from 'utils/api/services/CategoryService';
 
+export const generateMetadata = async ({
+  params,
+}: {
+  params: { slug: string };
+}) => {
+  const categoryData = await CategoriesService.getBySlug(params.slug);
+  return {
+    title: `Vape Store - ${categoryData.title}`,
+  };
+};
 const Page = async ({ params }: { params: { slug: string } }) => {
-  const categoryData = await fetchCategoryBySlug(params.slug);
-  const productsData = await getProductsByCategory(categoryData._id);
+  const categoryData = await CategoryService.getBySlug(params.slug);
+  const productsData = await ProductsService.getByCategory(categoryData._id);
 
   return <CategoryPage category={categoryData} products={productsData} />;
 };

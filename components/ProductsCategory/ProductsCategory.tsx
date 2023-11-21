@@ -1,8 +1,7 @@
-'use client';
 import { FC } from 'react';
 import { Product } from 'types/products';
 import styles from './ProductsCategory.module.scss';
-import ProductCard from 'components/ProductsCatgory/ProductCard';
+import ProductCard from 'components/ProductsCategory/ProductCard';
 type Props = {
   products: Product[];
 };

@@ -7,7 +7,7 @@ import Breadcrumbs from 'components/Breadcrumb';
 import { FaHome } from 'react-icons/fa';
 import { ROUTES } from 'utils/routes';
 import { Product } from 'types/products';
-import ProductsCategory from 'components/ProductsCatgory';
+import ProductsCategory from 'components/ProductsCategory';
 
 type Props = {
   category: Category;

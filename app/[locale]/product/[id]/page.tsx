@@ -1,17 +1,19 @@
-type Props = {
-    params: {
-        id: string
-    }
-}
+import { Product } from 'types/products';
+import ProductPage from 'components/pages/ProductPage';
 
-export const generateMetadata = async ({params: {id}}: Props) => {
-    return {
-        title: id
-    }
+type Props = {
+  params: {
+    id: string;
+  };
+  product: Product;
 };
 
-export default function Page({params: { id }}: Props) {
-    return (
-        <h1>Product Page {id}</h1>
-    )
+export const generateMetadata = async ({ params: { id } }: Props) => {
+  return {
+    title: `Vape Store - ${id}`,
+  };
+};
+
+export default async function Page() {
+  return <ProductPage />;
 }

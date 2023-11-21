@@ -4,4 +4,5 @@ export const ROUTES = {
   LK_PAGE: '/lk',
   PASSWORD_PAGE: '/lk/change-password',
   CATEGORY_PAGE: '/category',
+  PRODUCT_PAGE: '/product',
 };

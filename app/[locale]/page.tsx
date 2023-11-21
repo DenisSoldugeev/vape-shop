@@ -1,7 +1,7 @@
 import MainScreen from 'components/MainScreen';
-import { fetchCategories } from 'utils/categoryService';
+import CategoriesService from 'utils/api/services/CategoryService';
 
 export default async function Page() {
-  const categoryData = await fetchCategories();
+  const categoryData = await CategoriesService.getAll();
   return <MainScreen categoriesData={categoryData} />;
 }
