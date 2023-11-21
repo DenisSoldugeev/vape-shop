@@ -6,13 +6,16 @@ import { Category } from 'types/categories';
 import Breadcrumbs from 'components/Breadcrumb';
 import { FaHome } from 'react-icons/fa';
 import { ROUTES } from 'utils/routes';
+import { Product } from 'types/products';
+import ProductsCategory from 'components/ProductsCatgory';
 
 type Props = {
   category: Category;
+  products: Product[];
 };
 
 export const CategoryPage: FC<Props> = async (props) => {
-  const { category } = props;
+  const { category, products } = props;
 
   if (!category) {
     return <NotFound />;
@@ -34,6 +37,7 @@ export const CategoryPage: FC<Props> = async (props) => {
           ]}
         />
         <h1 className={styles.categoryTitle}>{category.title}</h1>
+        <ProductsCategory products={products} />
       </div>
     </div>
   );

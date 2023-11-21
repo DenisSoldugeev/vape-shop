@@ -1,0 +1,59 @@
+@import "styles/variables";
+
+.productsSection {
+  margin: 60px 0;
+}
+
+.productsList {
+  display: flex;
+  gap: 8px;
+}
+
+.productCard {
+  flex: 0 1 25%;
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.productTop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px 15px 40px;
+  height: 500px;
+  background: $white;
+  border-bottom: 2px solid $purple-500;
+}
+
+.productBody {
+  padding: 25px 15px;
+  height: calc(100% - 500px);
+}
+
+.productTitle {
+  font-family: $font-open-sans;
+  font-size: 16px;
+  font-weight: 400;
+  color: $black;
+}
+
+.priceWrapper {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.priceTitle {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.25;
+  color: $gray-650;
+}
+
+.price {
+  font-weight: bold;
+  font-size: 16px;
+  color: $black;
+  white-space: nowrap;
+}
