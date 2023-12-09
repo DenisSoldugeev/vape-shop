@@ -1,6 +1,6 @@
 import CategoryPage from 'components/pages/CategoryPage';
 import CategoriesService from 'utils/api/services/CategoryService';
-import ProductsService from 'utils/api/services/ProductService';
+import ProductsService from 'utils/api/services/ProductsService';
 import CategoryService from 'utils/api/services/CategoryService';
 
 export const generateMetadata = async ({

@@ -4,12 +4,16 @@ import styles from 'components/ProductsCategory/ProductsCategory.module.scss';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ROUTES } from 'utils/routes';
+import { findImageOfSize } from 'utils/findImagesOfSize';
+import { ImageSize } from 'types/images';
 
 type Props = {
   product: Product;
 };
 const ProductCard: FC<Props> = ({ product }) => {
   const baseURL = process.env.NEXT_PUBLIC_BASE_API_URL;
+  const imageUrl = findImageOfSize(product.images, ImageSize.Small);
+
   return (
     <div className={styles.productCard}>
       <div className={styles.productTop}>
@@ -18,9 +22,9 @@ const ProductCard: FC<Props> = ({ product }) => {
           className={styles.productImgLink}
         >
           <Image
-            src={`${baseURL}/${product.images[0]}`}
+            src={`${baseURL}/${imageUrl}`}
             alt={product.name}
-            width={226}
+            width={225}
             height={385}
             className={styles.productImg}
           />

@@ -3,6 +3,6 @@ export const ROUTES = {
   LOGIN_PAGE: '/login',
   LK_PAGE: '/lk',
   PASSWORD_PAGE: '/lk/change-password',
-  CATEGORY_PAGE: '/category',
+  CATEGORY_PAGE: '/catalog',
   PRODUCT_PAGE: '/product',
 };
